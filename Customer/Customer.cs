@@ -32,8 +32,8 @@ namespace Customer
                 ProductId = productID,
                 Country = country
             };
-
-            using (IBus bus = RabbitHutch.CreateBus("host=goose.rmq2.cloudamqp.com;virtualHost=mldigrlk;username=mldigrlk;password=b4bT92Z_sBkWhRoIP1ZAUe_BH_8hpTcv;persistentMessages=false"))
+            // Password is not valid anymore, still useful to look at how the string should look like
+            using (IBus bus = RabbitHutch.CreateBus("host=goose.rmq2.cloudamqp.com;virtualHost=mldigrlk;username=mldigrlk;password=zotjYObsAkeTHWQcJxnyrgXrk2RHE7FJ;persistentMessages=false"))
             {
                 // SOLUTION #1 - Listen to reply messages from the Retailer (use Topic Based Routing).
                 bus.PubSub.Subscribe<OrderReplyMessage>("warehouseToRetailerQueue", HandleOrderEvent, x => x.WithTopic(customerID.ToString()));

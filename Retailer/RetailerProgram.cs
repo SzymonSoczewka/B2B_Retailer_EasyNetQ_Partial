@@ -19,7 +19,8 @@ namespace Retailer
 
         static void Main(string[] args)
         {
-            using (bus = RabbitHutch.CreateBus("host=goose.rmq2.cloudamqp.com;virtualHost=mldigrlk;username=mldigrlk;password=b4bT92Z_sBkWhRoIP1ZAUe_BH_8hpTcv;persistentMessages=false"))
+            // Password is not valid anymore, still useful to look at how the string should look like
+            using (bus = RabbitHutch.CreateBus("host=goose.rmq2.cloudamqp.com;virtualHost=mldigrlk;username=mldigrlk;password=zotjYObsAkeTHWQcJxnyrgXrk2RHE7FJ;persistentMessages=false"))
             {
                 Console.WriteLine("Retailer is running.");
 
