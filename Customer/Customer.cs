@@ -52,7 +52,7 @@ namespace Customer
             reply.Append("Shipping charge: " + message.ShippingCharge + "\n");
             reply.Append("Days for delivery: " + message.DaysForDelivery + "\n");
             string SummaryMessage = message.WarehouseId == 0 ? "Your order count not be fulfilled.\n" : "Your Order will cost " + message.ShippingCharge + "$ and be delivered in " + message.DaysForDelivery + " days\n";
-            reply.Append(SummaryMessage);
+            reply.Append("Summary: \n" + SummaryMessage);
             lock (this)
             {
                 Console.WriteLine(reply.ToString());

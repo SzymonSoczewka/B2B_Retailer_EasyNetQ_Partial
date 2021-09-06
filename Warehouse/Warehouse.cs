@@ -22,6 +22,7 @@ namespace Warehouse
 
         public void Start()
         {
+            // Password is not valid anymore, still useful to look at how the string should look like
             using (bus = RabbitHutch.CreateBus("host=goose.rmq2.cloudamqp.com;virtualHost=mldigrlk;username=mldigrlk;password=zotjYObsAkeTHWQcJxnyrgXrk2RHE7FJ;persistentMessages=false"))
             {
                 // Listen for order request messages.
